@@ -9,45 +9,11 @@ enum TypographyName {
   s = "s"
 }
 
-enum Colors {
-  primary = "primary",
-  secondary = "secondary",
-  mainText = "mainText",
-  secondaryText = "secondaryText",
-  outline = "outline",
-  form = "form",
-  white = "white"
-}
-
-enum FontFamilies {
-  normal = "normal",
-  bold = "bold"
-}
-
 type TypographyType = {
   [x in TypographyName]: TextStyle;
 };
 
-type ColorsType = {
-  [x in Colors]: string;
-};
-
-type FontFamiliesType = {
-  [x in FontFamilies]: string;
-};
-
-type ThemeProps = {
-  typography: TypographyType;
-  color: ColorsType;
-  font: FontFamiliesType;
-};
-
-const fontsFamily = {
-  normal: "Inter_400Regular",
-  bold: "Inter_700Bold"
-};
-
-const color: ColorsType = {
+const color = {
   primary: "#1FCC79",
   secondary: "#FF6464",
   mainText: "#2E3E5C",
@@ -57,9 +23,24 @@ const color: ColorsType = {
   white: "#fff"
 };
 
+const font = {
+  normal: "Inter_400Regular",
+  bold: "Inter_700Bold"
+};
+
+type ThemeProps = {
+  typography: TypographyType;
+  color: {
+    [x in keyof typeof color]: string;
+  };
+  font: {
+    [x in keyof typeof font]: string;
+  };
+};
+
 const typography: TypographyType = {
   h1: {
-    fontFamily: fontsFamily.bold,
+    fontFamily: font.bold,
     fontWeight: "bold",
     fontSize: 22,
     fontStyle: "normal",
@@ -67,7 +48,7 @@ const typography: TypographyType = {
     letterSpacing: 0.5
   },
   h2: {
-    fontFamily: fontsFamily.bold,
+    fontFamily: font.bold,
     fontWeight: "bold",
     fontStyle: "normal",
     lineHeight: 27,
@@ -75,7 +56,7 @@ const typography: TypographyType = {
     fontSize: 17
   },
   h3: {
-    fontFamily: fontsFamily.bold,
+    fontFamily: font.bold,
     fontWeight: "bold",
     fontStyle: "normal",
     lineHeight: 25,
@@ -83,7 +64,7 @@ const typography: TypographyType = {
     fontSize: 15
   },
   p1: {
-    fontFamily: fontsFamily.normal,
+    fontFamily: font.normal,
     fontStyle: "normal",
     lineHeight: 27,
     letterSpacing: 0.5,
@@ -91,7 +72,7 @@ const typography: TypographyType = {
     fontWeight: "500"
   },
   p2: {
-    fontFamily: fontsFamily.normal,
+    fontFamily: font.normal,
     fontSize: 15,
     fontStyle: "normal",
     fontWeight: "500",
@@ -99,7 +80,7 @@ const typography: TypographyType = {
     letterSpacing: 0.5
   },
   s: {
-    fontFamily: fontsFamily.normal,
+    fontFamily: font.normal,
     fontWeight: "500",
     fontStyle: "normal",
     fontSize: 12,
@@ -111,5 +92,5 @@ const typography: TypographyType = {
 export const theme: ThemeProps = {
   color,
   typography,
-  font: fontsFamily
+  font
 };
