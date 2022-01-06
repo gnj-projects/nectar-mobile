@@ -3,9 +3,8 @@ import {
   Inter_700Bold,
   useFonts
 } from "@expo-google-fonts/inter";
+import { Router } from "@routes/index";
 import AppLoading from "expo-app-loading";
-import { StatusBar } from "expo-status-bar";
-import { Home } from "./src/screens/home";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,8 +18,7 @@ export default function App() {
 
   return (
     <>
-      <Home />
-      <StatusBar style="auto" />
+      <Router />
     </>
   );
 }
