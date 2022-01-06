@@ -9,8 +9,7 @@
       "@styles/*": ["./src/styles/*"],
       "@routes/*": ["./src/routes/*"],
       "@screens/*": ["./src/screens/*"],
-      "@molecules/*": ["./src/components/molecules/*"],
-      "@assets/*": ["./src/components/assets/*"]
+      "@assets/*": ["./src/assets/*"],
     }
   }
 }
