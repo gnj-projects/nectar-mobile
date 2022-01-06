@@ -8,7 +8,11 @@ module.exports = function (api) {
         {
           alias: {
             "@atoms": "./src/components/atoms",
-            "@styles": "./src/styles"
+            "@styles": "./src/styles",
+            "@routes": "./src/assets",
+            "@screens": "./src/screens",
+            "@molecules": "./src/components/molecules",
+            "@assets": "./src/assets"
           }
         }
       ]
